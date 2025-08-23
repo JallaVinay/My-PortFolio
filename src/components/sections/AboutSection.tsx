@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import profilePhoto from "@/assets/profile-photo.png";
 
 const AboutSection = () => {
   return (
@@ -21,7 +20,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-glow-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                 <img
-                  src={profilePhoto}
+                  src="https://res.cloudinary.com/dwzpwhdho/image/upload/v1755959987/profile-photo_ccwwuy.png"
                   alt="Vinay Jalla - Software Developer"
                   className="w-full h-full object-cover"
                 />
