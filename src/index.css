@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   Portfolio Design System 
+   Sleek Developer Theme
+================================ */
+@layer base {
+  :root {
+    /* Light Mode Colors */
+    --background: 0 95% 98%;
+    --foreground: 230 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 84% 4.9%;
+    --surface: 220 14% 96%;
+    --surface-foreground: 230 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 84% 4.9%;
+
+    --primary: 250 84% 54%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 260 100% 70%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 230 84% 4.9%;
+
+    --accent: 260 100% 70%;
+    --accent-foreground: 210 40% 98%;
+    --accent-muted: 250 84% 54%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 250 84% 54%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface)));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary-glow) / 0.1), transparent 70%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.15);
+    --shadow-hover: 0 20px 60px -20px hsl(var(--primary) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 230 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 84% 6%;
+    --card-foreground: 210 40% 98%;
+    --surface: 230 84% 6.5%;
+    --surface-foreground: 210 40% 98%;
+
+    --popover: 230 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 250 84% 60%;
+    --primary-foreground: 230 84% 4.9%;
+    --primary-glow: 260 100% 75%;
+
+    --secondary: 230 84% 10%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 260 100% 75%;
+    --accent-foreground: 230 84% 4.9%;
+    --accent-muted: 250 84% 60%;
+
+    --muted: 230 84% 10%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 84% 15%;
+    --input: 230 84% 15%;
+    --ring: 250 84% 60%;
+
+    /* Dark Gradients & Shadows */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface)));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary-glow) / 0.2), transparent 70%);
+
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-hover: 0 20px 60px -20px hsl(var(--primary) / 0.5);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ================================
+   Components
+================================ */
+@layer components {
+  .glow-card {
+    @apply relative overflow-hidden rounded-2xl bg-gradient-card shadow-elegant;
+    @apply hover:shadow-hover transition-all duration-300;
+  }
+
+
+  .glow-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: var(--gradient-glow);
+  pointer-events: none; 
+ }
+
+
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+/* ================================
+   Utilities (Neon + Glass)
+================================ */
+@layer utilities {
+  .glass {
+    background: hsla(var(--card) / 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--border) / 0.3);
+    border-radius: var(--radius);
+    transition: var(--transition-smooth);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, hsl(180 100% 50%), hsl(270 100% 60%), hsl(330 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Neon Colors */
+  .text-neon-cyan { color: hsl(180 100% 50%); }
+  .text-neon-purple { color: hsl(270 100% 60%); }
+  .text-neon-pink { color: hsl(330 100% 60%); }
+
+  .border-neon-cyan { border-color: hsl(180 100% 50%); }
+  .border-neon-purple { border-color: hsl(270 100% 60%); }
+  .border-neon-pink { border-color: hsl(330 100% 60%); }
+
+  .bg-neon-purple { background-color: hsl(270 100% 60%); }
+  .bg-neon-purple:hover { background-color: hsl(270 100% 50%); }
+
+  .bg-neon-cyan { background-color: hsl(180 100% 50%); }
+  .bg-neon-cyan:hover { background-color: hsl(180 100% 40%); }
+
+  .bg-neon-pink { background-color: hsl(330 100% 60%); }
+  .bg-neon-pink:hover { background-color: hsl(330 100% 50%); }
+
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+  }
+}
